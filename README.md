@@ -34,7 +34,7 @@ available TU Dortmund datasets, the reader can refer to this
 The code can simply be run with:
 
 ```sh
-python run_gnn.py --config_fpath ../core/config/config_file.json 
+python bin/run_gnn.py --config_fpath core/config/config_file.json 
 ```
 
 The optional arguments are:
