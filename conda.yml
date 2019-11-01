@@ -1,0 +1,8 @@
+name: gnn-min-example
+dependencies:
+  - python==3.6.1
+  - pip
+  - pip:
+    - torch==1.2.0
+    - dgl>=0.3
+

@@ -1,0 +1,11 @@
+{
+  "num_layers": 5,
+  "node_dim": 2,
+  "activation": "relu",
+  "neighbor_pooling_type": "sum",
+  "readout": {
+      "num_layers": 2,
+      "hidden_dim": 64,
+      "out_dim": 15
+  }
+}
