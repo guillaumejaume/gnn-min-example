@@ -29,6 +29,12 @@ Activate it:
 conda activate gnn-min-example
 ```
 
+Add the root directory to your PYTHONPATH:
+
+```bash
+export PYTHONPATH="<YOUR_PATH>/gnn-min-example/"
+```
+
 ## Code usage:
 
 By default, the GNN is run on the Letter-low dataset. For a comprehensive list of
