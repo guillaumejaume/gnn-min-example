@@ -5,16 +5,6 @@ edge weights.
 
 ## Installation
 
-### Requirements
-
-Here is a list of requirements in case installing using pip does not work. 
-If so, just comment out the problematic package from `requirements.txt` and install it manually. 
-
-```console
-torch==1.2.0
-dgl>=0.3
-```
-
 ### Suggested setup for development
 
 Create a `conda` environment:
