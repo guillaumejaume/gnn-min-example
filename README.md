@@ -31,9 +31,13 @@ By default, the GNN is run on the Letter-low dataset. For a comprehensive list o
 available TU Dortmund datasets, the reader can refer to this 
 [link](https://ls11-www.cs.tu-dortmund.de/staff/morris/graphkerneldatasets).
 
+The code can simply be run with:
+
 ```sh
 python run_gnn.py --config_fpath ../core/config/config_file.json 
 ```
+
+The optional arguments are:
 
 ```bash
 usage: run_gnn.py [-h] --config_fpath CONFIG_FPATH [--gpu GPU] [--lr LR]
@@ -57,7 +61,6 @@ Arguments:
                         evaluate model every EVAL_EVERY steps
 ```
 
-The 
 
 ## Configuration parameters:
 
