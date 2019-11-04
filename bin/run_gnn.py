@@ -64,13 +64,15 @@ def main(args):
             step += 1
             if step % args.eval_every == 0:
                 val_loss, val_acc = test(val_dataloader, model, loss_fcn)
-                print("Step {:05d} | Train loss {:.4f} | Over {} | Val loss {:.4f} |"
-                      "Val acc {:.4f}".format(step,
-                                              np.mean(losses),
-                                              len(losses),
-                                              val_loss,
-                                              val_acc,
-                                              ))
+                print(
+                    "Step {:05d} | Train loss {:.4f} | Over {} | Val loss {:.4f} |"
+                    "Val acc {:.4f}".format(
+                        step,
+                        np.mean(losses),
+                        len(losses),
+                        val_loss,
+                        val_acc,
+                    ))
                 model.train()
 
     print('*** Start Testing ***')
@@ -104,16 +106,36 @@ def test(data_loader, model, loss_fcn):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Graph Neural Network Minimum Example.')
-    parser.add_argument("--config_fpath", type=str, required=True, help="Path to JSON configuration file.")
+    parser = argparse.ArgumentParser(
+        description='Graph Neural Network Minimum Example.')
+    parser.add_argument(
+        "--config_fpath",
+        type=str,
+        required=True,
+        help="Path to JSON configuration file.")
     parser.add_argument("--gpu", type=int, default=-1, help="gpu")
     parser.add_argument("--lr", type=float, default=1e-3, help="learning rate")
-    parser.add_argument("--weight-decay", type=float, default=5e-4, help="Weight for L2 loss")
-    parser.add_argument("--n-epochs", type=int, default=100, help="number of epochs")
-    parser.add_argument("--batch-size", type=int, default=16, help="batch size")
-    parser.add_argument("--eval-every", type=int, default=50, help="eval model every N steps")
+    parser.add_argument(
+        "--weight-decay",
+        type=float,
+        default=5e-4,
+        help="Weight for L2 loss")
+    parser.add_argument(
+        "--n-epochs",
+        type=int,
+        default=100,
+        help="number of epochs")
+    parser.add_argument(
+        "--batch-size",
+        type=int,
+        default=16,
+        help="batch size")
+    parser.add_argument(
+        "--eval-every",
+        type=int,
+        default=50,
+        help="eval model every N steps")
 
     args = parser.parse_args()
 
     main(args)
-

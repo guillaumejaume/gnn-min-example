@@ -51,7 +51,10 @@ class MLP(nn.Module):
         elif num_layers > 1:
             # append hidden layers
             for layer_id in range(num_layers):
-                self.mlp.append(self._build_layer(layer_id, act=layer_id == (num_layers-1)))
+                self.mlp.append(
+                    self._build_layer(
+                        layer_id, act=layer_id == (
+                            num_layers - 1)))
         else:
             raise ValueError('The number of layers must be greater than 1.')
 
@@ -66,9 +69,12 @@ class MLP(nn.Module):
         :return: layer (Sequential)
         """
         layer = Sequential()
-        layer.add_module("fc", Linear(self.dims[layer_id], self.dims[layer_id+1], bias=self.bias[layer_id]))
+        layer.add_module("fc",
+                         Linear(self.dims[layer_id],
+                                self.dims[layer_id + 1],
+                                bias=self.bias[layer_id]))
         if self.use_bn:
-            bn = nn.BatchNorm1d(self.dims[layer_id+1])
+            bn = nn.BatchNorm1d(self.dims[layer_id + 1])
             layer.add_module("bn", bn)
         if act:
             layer.add_module(self.act, self.activation)
@@ -86,7 +92,8 @@ class MLP(nn.Module):
             ) == num_layers, "Length of bias should match the number of layers."
             self.bias = bias
         else:
-            raise ValueError("Unsupported type for bias. Needs to be of type bool or list.")
+            raise ValueError(
+                "Unsupported type for bias. Needs to be of type bool or list.")
 
     def _set_batch_norm(self, use_bn, num_layers):
         """
@@ -95,7 +102,8 @@ class MLP(nn.Module):
         if isinstance(use_bn, bool):
             self.use_bn = num_layers * [use_bn]
         else:
-            raise ValueError("Unsupported type for batch norm. Needs to be of type bool.")
+            raise ValueError(
+                "Unsupported type for batch norm. Needs to be of type bool.")
 
     def _set_mlp_dimensions(self, in_dim, h_dim, out_dim, num_layers):
         """

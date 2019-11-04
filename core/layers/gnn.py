@@ -45,7 +45,14 @@ class GINLayer(nn.Module):
 
         if verbose:
             print('Creating new GNN layer:')
-        self.mlp = MLP(node_dim, hidden_dim, out_dim, 2, act, use_bn, verbose=verbose)
+        self.mlp = MLP(
+            node_dim,
+            hidden_dim,
+            out_dim,
+            2,
+            act,
+            use_bn,
+            verbose=verbose)
         self._set_neighbor_pooling(neighbor_pooling_type)
         self.eps = eps
         self.learn_eps = learn_eps

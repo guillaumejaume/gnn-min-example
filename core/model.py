@@ -46,14 +46,15 @@ class Model(nn.Module):
         """
         self.gnn = nn.ModuleList()
         for i in range(self.num_layers):
-            self.gnn.append(GINLayer(node_dim=self.node_dim,
-                                     hidden_dim=self.node_dim,
-                                     out_dim=self.node_dim,
-                                     act=self.act,
-                                     neighbor_pooling_type=self.neighbor_pooling_type,
-                                     layer_id=i,
-                                     verbose=self.verbose)
-                            )
+            self.gnn.append(
+                GINLayer(
+                    node_dim=self.node_dim,
+                    hidden_dim=self.node_dim,
+                    out_dim=self.node_dim,
+                    act=self.act,
+                    neighbor_pooling_type=self.neighbor_pooling_type,
+                    layer_id=i,
+                    verbose=self.verbose))
 
     def _build_readout(self):
         """
