@@ -1,7 +1,6 @@
 # GNN minimum example
 
-A simple implementation of a Graph Neural Network operating on a directed graph with 
-edge weights.
+A simple implementation of a Graph Neural Network for graph classification tasks. The code is currently set to operate on a  directed graph with node features. The graphs can also have edge weights. This code is leveraging the `DGL` dataloader that allow to directly download and use the `TUDortmund` datasets. A custom dataloader can easlily be implemented to adapt to any custom graph (e.g., with node labels). The `model.py` can also be adapted to perform node classification or link prediction tasks. Note that the `layers` could remain unchanged as they were built to be task-agnostic.  
 
 ## Installation
 
